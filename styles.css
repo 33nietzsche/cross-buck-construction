@@ -466,3 +466,32 @@ textarea { min-height: 120px; resize: vertical; }
   border-color: var(--beige-3);
   color: var(--black);
 }
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+.photo-gallery figure {
+  margin: 0;
+  background: var(--black-2);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.photo-gallery figcaption {
+  padding: 10px 14px 14px;
+  color: var(--beige-3);
+  font-size: 0.9rem;
+}
+.photo-gallery .photo-wide {
+  grid-column: 1 / -1;
+}
+@media (max-width: 640px) {
+  .photo-gallery { grid-template-columns: 1fr; }
+}
