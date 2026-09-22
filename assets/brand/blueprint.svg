@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.22"/>
+      </feComponentTransfer>
+    </filter>
+    <radialGradient id="vignette" cx="50%" cy="46%" r="72%">
+      <stop offset="0%" stop-color="#1a1d22" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050607" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="#121418"/>
+  <rect width="1600" height="1000" filter="url(#grain)"/>
+  <rect width="1600" height="1000" fill="url(#vignette)"/>
+
+  <g fill="none" stroke="#f3f0e8" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="28" y="22" width="1544" height="956" stroke-width="1.6"/>
+    <rect x="40" y="34" width="1520" height="932" stroke-width="0.6"/>
+    <path d="M28 22 L14 22 L14 36 M1572 22 L1586 22 L1586 36 M28 978 L14 978 L14 964 M1572 978 L1586 978 L1586 964" stroke-width="1"/>
+
+    <!-- House elevation -->
+    <path d="M70 360 H430" stroke-width="1.1"/>
+    <path d="M110 360 V230 H250 L300 178 L350 230 V360" stroke-width="1.3"/>
+    <path d="M250 230 H392 V360" stroke-width="0.8"/>
+    <rect x="150" y="268" width="36" height="28" stroke-width="0.9"/>
+    <rect x="210" y="268" width="36" height="28" stroke-width="0.9"/>
+    <path d="M300 360 V292 H332 V360" stroke-width="0.9"/>
+    <path d="M128 360 V248 H168 V360" stroke-width="0.7"/>
+    <path d="M70 150 H250 M250 150 V178" stroke-width="0.6"/>
+    <path d="M70 142 V158 M250 142 V158" stroke-width="0.6"/>
+    <path d="M430 200 V360 M422 200 H438 M422 360 H438" stroke-width="0.6"/>
+
+    <!-- Plan -->
+    <rect x="500" y="80" width="420" height="280" stroke-width="1.4"/>
+    <path d="M680 80 V360 M500 210 H680 M680 170 H920" stroke-width="1"/>
+    <path d="M600 360 V332 A28 28 0 0 1 628 360" stroke-width="0.8"/>
+    <path d="M760 170 H800 V210" stroke-width="0.8"/>
+    <path d="M500 48 H920 M500 40 V56 M920 40 V56" stroke-width="0.6"/>
+    <path d="M470 80 V360 M462 80 H478 M462 360 H478" stroke-width="0.6"/>
+
+    <!-- Barn elevation -->
+    <path d="M1120 360 H1480" stroke-width="1.1"/>
+    <path d="M1160 360 V250 H1440 V360" stroke-width="1.3"/>
+    <path d="M1140 250 L1300 150 L1460 250" stroke-width="1.3"/>
+    <path d="M1260 360 V286 H1340 V360" stroke-width="0.9"/>
+    <rect x="1188" y="278" width="34" height="26" stroke-width="0.8"/>
+    <rect x="1378" y="278" width="34" height="26" stroke-width="0.8"/>
+    <path d="M1488 168 V360 M1480 168 H1496 M1480 360 H1496" stroke-width="0.6"/>
+
+    <!-- Fence section -->
+    <path d="M70 760 H620" stroke-width="1.1"/>
+    <path d="M70 786 H250 M360 786 H620" stroke-width="0.9"/>
+    <path d="M110 742 V804 M170 742 V804 M230 742 V804 M400 742 V804 M480 742 V804 M560 742 V804" stroke-width="0.9"/>
+    <path d="M268 736 V810 M342 736 V810" stroke-width="1.1"/>
+    <path d="M268 736 L342 810 M342 736 L268 810" stroke-width="1.1"/>
+    <path d="M70 700 H620 M70 692 V708 M620 692 V708" stroke-width="0.6"/>
+
+    <!-- Pipe detail -->
+    <path d="M760 700 H900 V620 H1040" stroke-width="1.4" stroke-linejoin="round"/>
+    <circle cx="1040" cy="620" r="5" stroke-width="0.9"/>
+    <path d="M760 660 H860" stroke-width="0.7"/>
+    <path d="M760 560 H1040 M760 552 V568 M1040 552 V568" stroke-width="0.6"/>
+  </g>
+
+  <!-- Red accents: a few dimensions and one member -->
+  <g fill="none" stroke="#c8102e" stroke-width="1.15">
+    <path d="M48 118 H108"/>
+    <path d="M48 110 V126 M108 110 V126"/>
+    <path d="M268 736 L342 810"/>
+    <path d="M900 620 H1040"/>
+  </g>
+
+  <g fill="#f3f0e8" stroke="none" font-family="Helvetica, Arial, sans-serif">
+    <text x="50" y="108" font-size="11" letter-spacing="1">24'-0"</text>
+    <text x="438" y="286" font-size="11" letter-spacing="1" transform="rotate(-90 438 286)">10'-8"</text>
+    <text x="640" y="34" font-size="11" letter-spacing="1">36'-0"</text>
+    <text x="250" y="688" font-size="11" letter-spacing="1">8'-0" O.C.</text>
+    <text x="860" y="548" font-size="11" letter-spacing="1">18'-6"</text>
+    <text x="1228" y="140" font-size="11" letter-spacing="1">ELEV.</text>
+    <text x="640" y="70" font-size="11" letter-spacing="1.4">PLAN</text>
+    <text x="200" y="214" font-size="11" letter-spacing="1.2">FRONT</text>
+    <text x="90" y="830" font-size="11" letter-spacing="1.2">FENCE SECTION</text>
+  </g>
+  <g fill="#c8102e" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="0.6">
+    <text x="168" y="190">12'-6"</text>
+    <text x="292" y="828">HOLD</text>
+  </g>
+  <g fill="#f3f0e8" font-family="Bradley Hand, Marker Felt, cursive" font-size="15">
+    <text x="150" y="400">porch to remain</text>
+    <text x="700" y="250">check swing</text>
+    <text x="760" y="760">water line below grade</text>
+  </g>
+
+  <!-- Title block -->
+  <g fill="none" stroke="#f3f0e8" stroke-width="0.9">
+    <rect x="1120" y="700" width="420" height="230"/>
+    <path d="M1120 756 H1540 M1120 812 H1540 M1120 868 H1540 M1320 700 V930"/>
+  </g>
+  <g fill="#f3f0e8" font-family="Helvetica, Arial, sans-serif">
+    <text x="1136" y="738" font-size="18" font-weight="700" letter-spacing="2">CROSS BUCK</text>
+    <text x="1136" y="794" font-size="11" letter-spacing="3">CONSTRUCTION</text>
+    <text x="1136" y="850" font-size="11" letter-spacing="1">RANCH SHEET</text>
+    <text x="1136" y="908" font-size="11" letter-spacing="1">SCALE AS NOTED</text>
+    <text x="1340" y="738" font-size="13" letter-spacing="2">A1</text>
+    <text x="1340" y="794" font-size="11" letter-spacing="1">REV 2</text>
+  </g>
+  <text x="1340" y="850" fill="#c8102e" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1">RED = HOLD</text>
+</svg>

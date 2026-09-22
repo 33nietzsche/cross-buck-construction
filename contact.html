@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Cross Buck Construction</title>
   <link rel="canonical" href="https://crossbuckconstruction.com/contact.html" />
-  <meta name="description" content="Quote request: electrical, operating, plumbing, corrals, fences, concrete, framing. Most of West Texas, from Lubbock to Midland and Odessa, including Wolfforth, Brownfield, Lamesa and surrounding communities." />
-  <link rel="icon" href="https://files.catbox.moe/ekrbtq.png" type="image/png" />
+  <meta name="description" content="Quote request: electrical, operating, plumbing, corrals, fences, concrete, framing. Lubbock, Wolfforth, Brownfield, Lamesa, Midland, and Odessa." />
+  <link rel="icon" href="assets/brand/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -14,7 +14,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">
-        <span class="brand-mark"><img src="https://files.catbox.moe/ekrbtq.png" alt="Cross Buck" /></span>
+        <span class="brand-mark"><img src="assets/brand/crossbuck-logo-4k.png" alt="Cross Buck" /></span>
         <span class="brand-text"><strong>Cross Buck</strong><span>Construction</span></span>
       </a>
       <nav class="nav-links">
@@ -29,31 +29,34 @@
 
   <div class="wrap page-head">
     <h1>Contact</h1>
-    <p class="muted">Most of West Texas · Lubbock to Midland and Odessa · including Wolfforth, Brownfield, Lamesa. Photos help.</p>
+    <p class="muted">Lubbock, Wolfforth, Brownfield, Lamesa, Midland, and Odessa. Photos help.</p>
   </div>
 
-  <section style="padding-top:8px">
+  <section class="solid" style="padding-top:8px">
     <div class="wrap grid-2">
       <div class="card">
         <h3>Request a quote</h3>
-        <form action="mailto:crossbuckconstruction@gmail.com" method="post" enctype="text/plain">
+        <form id="quote-form" autocomplete="on">
+          <p class="form-note">This request goes to <a href="mailto:crossbuckconstruction@gmail.com">crossbuckconstruction@gmail.com</a>. You can also call or text <a href="tel:+18064966999">806-496-6999</a>.</p>
           <label for="name">Name</label>
-          <input id="name" name="name" required placeholder="Your name" />
+          <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
 
           <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" placeholder="Best number" />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best number" />
 
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@email.com" />
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
 
-          <label for="town">Town / area</label>
-          <input id="town" name="town" placeholder="e.g. Lubbock, Midland, Wolfforth…" />
+          <label for="town">Town</label>
+          <input id="town" name="town" autocomplete="address-level2" placeholder="e.g. Lubbock, Midland, Wolfforth…" />
 
           <label for="service">Job type</label>
           <select id="service" name="service">
             <option>Electrical</option>
-            <option>Operating (pipeline / caliche / dig & dump)</option>
-            <option>Plumbing</option>
+            <option>Solar — well install or house array</option>
+            <option>Welding</option>
+            <option>Operating (caliche / dig & dump)</option>
+            <option>Ranch and farm plumbing / pipeline</option>
             <option>Corral / pens</option>
             <option>Fence / gates</option>
             <option>Concrete</option>
@@ -61,16 +64,36 @@
             <option>General / mix / not sure</option>
           </select>
 
+          <label for="photos">Photos of the job</label>
+          <input id="photos" name="photos" type="file" accept="image/*" multiple />
+
           <label for="msg">What do you need?</label>
-          <textarea id="msg" name="message" placeholder="Describe the job, access, timeline. Dig / knock down / dump? Plumbing? Power? Photos welcome by text after you send."></textarea>
+          <textarea id="msg" name="message" placeholder="Describe the job, access, and timeline."></textarea>
 
           <p style="margin-top:16px">
             <button class="btn btn-primary" type="submit">Send request</button>
           </p>
-          <p class="form-note">
-            Or email <a href="mailto:crossbuckconstruction@gmail.com">crossbuckconstruction@gmail.com</a> directly.
-          </p>
+          <p class="form-note">The page stays on this secure site. Your email app opens with the request addressed to crossbuckconstruction@gmail.com. Attach the photos in that email. A website form cannot place photo files into the email by itself.</p>
         </form>
+        <script>
+          document.getElementById("quote-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var photos = document.getElementById("photos").files;
+            var names = [];
+            for (var i = 0; i < photos.length; i++) names.push(photos[i].name);
+            var body = [
+              "Name: " + document.getElementById("name").value,
+              "Phone: " + document.getElementById("phone").value,
+              "Email: " + document.getElementById("email").value,
+              "Town: " + document.getElementById("town").value,
+              "Job type: " + document.getElementById("service").value,
+              "Photos to attach: " + (names.length ? names.join(", ") : "none selected"),
+              "",
+              document.getElementById("msg").value
+            ].join("\n");
+            window.location.href = "mailto:crossbuckconstruction@gmail.com?subject=" + encodeURIComponent("Quote request — Cross Buck Construction") + "&body=" + encodeURIComponent(body);
+          });
+        </script>
       </div>
       <div>
         <div class="card" style="margin-bottom:16px">
@@ -79,12 +102,12 @@
             <strong>Business:</strong> Cross Buck Construction<br />
             <strong>Phone:</strong> <a href="tel:+18064966999">806-496-6999</a><br />
             <strong>Email:</strong> <a href="mailto:crossbuckconstruction@gmail.com">crossbuckconstruction@gmail.com</a><br />
-            <strong>Area:</strong> Most of West Texas — Lubbock to Midland and Odessa, including Wolfforth, Brownfield, Lamesa and surrounding communities
+            <strong>Towns:</strong> Lubbock, Wolfforth, Brownfield, Lamesa, Midland, and Odessa
           </p>
         </div>
         <div class="card">
           <h3>Services (quick list)</h3>
-          <p>Electrical · Operating (pipeline, caliche roads, dig & dump) · Plumbing · Corrals · Fences · Concrete · Framing · General jobs</p>
+          <p>Electrical · Solar well installs and house arrays · Welding · Operating · Air construction · Ranch and farm plumbing, pipeline · Corrals · Fences · Concrete · Framing · General jobs. 28 years in the trades and air construction.</p>
         </div>
       </div>
     </div>
