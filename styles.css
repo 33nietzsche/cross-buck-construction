@@ -562,3 +562,17 @@ textarea { min-height: 120px; resize: vertical; }
   height: auto;
   display: block;
 }
+
+/* Monochrome buttons (Cross Buck no-red / no-blue rule) */
+.btn-mono {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+.btn-mono:hover { background: var(--white); color: var(--black); text-decoration: none; }
+.btn-mono-light {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
+.btn-mono-light:hover { background: transparent; color: var(--white); text-decoration: none; }
