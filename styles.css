@@ -550,3 +550,34 @@ textarea { min-height: 120px; resize: vertical; }
 @media (max-width: 640px) {
   .photo-gallery { grid-template-columns: 1fr; }
 }
+
+.photo-feature {
+  margin: 24px 0 0;
+  max-width: 760px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-feature img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Monochrome buttons (Cross Buck no-red / no-blue rule) */
+.btn-mono {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+.btn-mono:hover { background: var(--white); color: var(--black); text-decoration: none; }
+.btn-mono-light {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
+.btn-mono-light:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+.form-status { margin-top: 12px; font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.form-status:empty { display: none; }
+.form-success { color: var(--text); }
+.form-error { color: var(--text); }
