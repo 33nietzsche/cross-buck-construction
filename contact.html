@@ -44,8 +44,13 @@
     <div class="wrap grid-2">
       <div class="card">
         <h3>Request a quote</h3>
-        <form id="quote-form" autocomplete="on">
-          <p class="form-note">This request goes to <a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a>. You can also call or text <a href="tel:+18064966999">806-496-6999</a>.</p>
+        <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+          <p class="form-note">Send this form and your request comes straight to Cross Buck Construction. You can also call or text <a href="tel:+18064966999">806-496-6999</a>.</p>
+          <input type="hidden" name="access_key" value="e207138a-d18b-4cdc-b3ad-0bd3d437b727" />
+          <input type="hidden" name="subject" value="New quote request – Cross Buck website" />
+          <input type="hidden" name="from_name" value="Cross Buck website" />
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
+
           <label for="name">Name</label>
           <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
 
@@ -59,7 +64,7 @@
           <input id="town" name="town" autocomplete="address-level2" placeholder="e.g. Lubbock, Midland, Wolfforth…" />
 
           <label for="service">Job type</label>
-          <select id="service" name="service">
+          <select id="service" name="job_type">
             <option>Electrical</option>
             <option>Solar — well install or house array</option>
             <option>Welding</option>
@@ -72,35 +77,56 @@
             <option>General / mix / not sure</option>
           </select>
 
-          <label for="photos">Photos of the job</label>
-          <input id="photos" name="photos" type="file" accept="image/*" multiple />
-
           <label for="msg">What do you need?</label>
-          <textarea id="msg" name="message" placeholder="Describe the job, access, and timeline."></textarea>
+          <textarea id="msg" name="message" required placeholder="Describe the job, access, and timeline."></textarea>
+
+          <p class="form-note"><strong>Have photos?</strong> Text them to <a href="tel:+18064966999">(806) 496-6999</a> after you send this.</p>
 
           <p style="margin-top:16px">
-            <button class="btn btn-primary" type="submit">Send request</button>
+            <button class="btn btn-primary" type="submit" id="quote-submit">Send request</button>
           </p>
-          <p class="form-note">The page stays on this secure site. Your email app opens with the request addressed to email@crossbuckconstruction.com. Attach the photos in that email. A website form cannot place photo files into the email by itself.</p>
+          <p class="form-status" id="quote-status" role="status" aria-live="polite"></p>
         </form>
         <script>
-          document.getElementById("quote-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            var photos = document.getElementById("photos").files;
-            var names = [];
-            for (var i = 0; i < photos.length; i++) names.push(photos[i].name);
-            var body = [
-              "Name: " + document.getElementById("name").value,
-              "Phone: " + document.getElementById("phone").value,
-              "Email: " + document.getElementById("email").value,
-              "Town: " + document.getElementById("town").value,
-              "Job type: " + document.getElementById("service").value,
-              "Photos to attach: " + (names.length ? names.join(", ") : "none selected"),
-              "",
-              document.getElementById("msg").value
-            ].join("\n");
-            window.location.href = "mailto:email@crossbuckconstruction.com?subject=" + encodeURIComponent("Quote request — Cross Buck Construction") + "&body=" + encodeURIComponent(body);
-          });
+          (function () {
+            var form = document.getElementById("quote-form");
+            var status = document.getElementById("quote-status");
+            var button = document.getElementById("quote-submit");
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
+              if (!form.reportValidity()) return;
+              var data = {};
+              new FormData(form).forEach(function (value, key) { data[key] = value; });
+              if (!data.phone && !data.email) {
+                status.className = "form-status form-error";
+                status.textContent = "Please add a phone number or email so we can get back to you.";
+                return;
+              }
+              button.disabled = true;
+              status.className = "form-status";
+              status.textContent = "Sending…";
+              fetch(form.action, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                body: JSON.stringify(data)
+              })
+                .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+                .then(function (r) {
+                  if (r.ok && r.json.success) {
+                    form.reset();
+                    status.className = "form-status form-success";
+                    status.textContent = "Thanks — your request was sent. We’ll get back to you soon. Have photos? Text them to (806) 496-6999.";
+                  } else {
+                    throw new Error((r.json && r.json.message) || "Send failed");
+                  }
+                })
+                .catch(function () {
+                  status.className = "form-status form-error";
+                  status.innerHTML = "Sorry, that didn’t go through. Please call or text <a href=\"tel:+18064966999\">806-496-6999</a>, or email <a href=\"mailto:email@crossbuckconstruction.com\">email@crossbuckconstruction.com</a>.";
+                })
+                .then(function () { button.disabled = false; });
+            });
+          })();
         </script>
       </div>
       <div>

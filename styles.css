@@ -576,3 +576,8 @@ textarea { min-height: 120px; resize: vertical; }
   color: var(--black);
 }
 .btn-mono-light:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+.form-status { margin-top: 12px; font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.form-status:empty { display: none; }
+.form-success { color: var(--text); }
+.form-error { color: var(--text); }
