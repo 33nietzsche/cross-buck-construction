@@ -550,3 +550,15 @@ textarea { min-height: 120px; resize: vertical; }
 @media (max-width: 640px) {
   .photo-gallery { grid-template-columns: 1fr; }
 }
+
+.photo-feature {
+  margin: 24px 0 0;
+  max-width: 760px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-feature img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
