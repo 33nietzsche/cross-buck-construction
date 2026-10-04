@@ -581,3 +581,23 @@ textarea { min-height: 120px; resize: vertical; }
 .form-status:empty { display: none; }
 .form-success { color: var(--text); }
 .form-error { color: var(--text); }
+
+/* SEO/AEO pages (Oct 2026) */
+.h1-kicker { display: block; font-size: .45em; letter-spacing: .04em; margin-bottom: 8px; font-family: var(--font); font-weight: 800; text-transform: uppercase; }
+.breadcrumb { font-size: .85rem; margin: 0 0 12px; }
+.page-kicker { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.page-head .hero-actions { margin: 0 0 24px; }
+.reading-col { max-width: 48rem; padding-top: 8px; padding-bottom: 24px; }
+.reading-col h2 { margin-top: 32px; }
+.reading-col h3 { margin: 20px 0 6px; font-size: 1.1rem; }
+.reading-col .photo-feature { margin: 16px 0 8px; }
+.brand-note { font-size: .85rem; margin-top: 24px; }
+.footer-links { margin-top: 14px; line-height: 1.8; }
+.card h3 a { color: inherit; text-decoration: none; }
+.card h3 a:hover { color: var(--red); text-decoration: underline; }
+.card-links { margin-top: 10px !important; font-size: .88rem !important; }
+a.pill { text-decoration: none; }
+a.pill:hover { background: rgba(233, 224, 210, 0.2); color: var(--white); }
+.pill small { display: block; font-size: .68rem; font-weight: 600; color: var(--silver-3); }
+.answer-list { margin: 0; padding-left: 20px; }
+.answer-list li { margin: 6px 0; }
