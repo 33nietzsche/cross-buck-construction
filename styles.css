@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Nunito Sans Logo";
+  src: url("assets/fonts/nunito-sans-latin-var.woff2") format("woff2");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   /* Red, black, white, silver */
   --black: #0a0a0a;
@@ -19,6 +26,7 @@
   --radius: 14px;
   --font: "DM Sans", system-ui, sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
+  --logo-font: "Nunito Sans Logo", "Nunito Sans", "DM Sans", system-ui, sans-serif;
   --max: 1120px;
 
   /* aliases used in HTML */
@@ -618,3 +626,10 @@ a.pill:hover { background: rgba(233, 224, 210, 0.2); color: var(--white); }
 .pill small { display: block; font-size: .68rem; font-weight: 600; color: var(--silver-3); }
 .answer-list { margin: 0; padding-left: 20px; }
 .answer-list li { margin: 6px 0; }
+
+/* Logo-matched typography (Nunito Sans, close to the Cross Buck logo lettering) */
+.brand-text strong, .brand-text span,
+.hero h1, .hero h1 .h1-kicker, .hero .tag, .hero .hero-offer,
+.hero .hero-actions .btn, .hero-stats strong { font-family: var(--logo-font); }
+.hero h1 { font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.05; max-width: 16ch; }
+.hero h1 .h1-kicker { font-weight: 800; letter-spacing: 0.22em; font-size: 0.34em; margin-bottom: 14px; line-height: 1.5; }
