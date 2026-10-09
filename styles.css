@@ -170,7 +170,7 @@ img { max-width: 100%; display: block; }
   background:
     linear-gradient(100deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.52) 48%, rgba(10, 10, 10, 0.32) 100%),
     linear-gradient(to top, rgba(10, 10, 10, 0.78) 0%, transparent 45%),
-    url("assets/photos/hero-ranch.jpg") center/cover no-repeat;
+    url("assets/photos/hero-power-desktop.webp") 70% center/cover no-repeat;
 }
 .hero-inner {
   position: relative;
@@ -209,6 +209,23 @@ img { max-width: 100%; display: block; }
   max-width: 34rem;
   margin: 0 0 26px;
   text-shadow: 0 1px 12px rgba(0,0,0,0.45);
+}
+.hero .hero-offer {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
+  margin: 0 0 14px; padding: 8px 14px; font-size: 1rem;
+  background: var(--red); color: var(--white); border-radius: 8px; text-shadow: none;
+}
+.hero .hero-offer strong { font-size: 1.15rem; font-weight: 800; }
+.hero .hero-offer span { font-size: 0.85rem; font-weight: 600; opacity: 0.92; }
+.hero .hero-also { font-size: 0.98rem; color: var(--beige-3); }
+.btn-call { background: var(--white); color: var(--black); border: 2px solid var(--white); font-weight: 800; }
+.btn-call:hover { background: var(--silver-2); color: var(--black); }
+@media (max-width: 860px) {
+  .hero-bg {
+    background:
+      linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.55) 55%, rgba(10, 10, 10, 0.3) 100%),
+      url("assets/photos/hero-power-mobile.webp") 60% top/cover no-repeat;
+  }
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
 .hero-stats {
