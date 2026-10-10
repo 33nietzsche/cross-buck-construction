@@ -44,6 +44,14 @@
     oaiMeasure("measure", "lead_created", { type: "customer_action" });
   });
 
+  // Review button clicks (interaction only, not a posted review).
+  document.addEventListener("click", function (event) {
+    var t = event.target;
+    var a = t && t.closest ? t.closest("a[data-review-link]") : null;
+    if (!a) return;
+    measure("review_click", { send_to: "G-VGGX50Y3KE", placement: a.getAttribute("data-review-link") });
+  });
+
   // A phone-link click is an interaction, not proof of a completed call or lead.
   document.addEventListener("click", function (event) {
     var target = event.target;
