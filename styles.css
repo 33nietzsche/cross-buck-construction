@@ -680,3 +680,4 @@ a { color: var(--accent-ink); } a:hover { color: #333; }
 .review-band { border-top-color: var(--black); }
 @media (max-width: 860px) { .nav-mobile-actions .nav-call { display: none; } }
 .footer .review-cta .btn-dark { background: var(--white) !important; border-color: var(--white) !important; color: var(--black) !important; }
+.hero .hero-sub { font-size: 1.1rem; font-weight: 600; margin: 4px 0 12px; }
