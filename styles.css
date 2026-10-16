@@ -679,3 +679,4 @@ a { color: var(--accent-ink); } a:hover { color: #333; }
 .hero-trust span::before { color: var(--white); }
 .review-band { border-top-color: var(--black); }
 @media (max-width: 860px) { .nav-mobile-actions .nav-call { display: none; } }
+.footer .review-cta .btn-dark { background: var(--white) !important; border-color: var(--white) !important; color: var(--black) !important; }
