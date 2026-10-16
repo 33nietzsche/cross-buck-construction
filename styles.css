@@ -10,8 +10,8 @@
   --black: #0a0a0a;
   --black-2: #141414;
   --black-3: #1c1c1c;
-  --red: #F28C28; /* safety orange accent (Oct 2026) */
-  --red-2: #D9741A;
+  --red: #0a0a0a; /* black-and-white brand (Oct 2026) */
+  --red-2: #333333;
   --silver: #d5d8dc;
   --silver-2: #eef0f2;
   --silver-3: #b7bcc3;
@@ -662,11 +662,20 @@ a.pill:hover { background: rgba(233, 224, 210, 0.2); color: var(--white); }
   .mobile-call-bar { display:block; position:fixed; left:0; right:0; bottom:0; z-index:1000; text-align:center; background:var(--white); color:var(--black); font-weight:800; font-size:1.15rem; padding:16px 18px calc(16px + env(safe-area-inset-bottom)); box-shadow:0 -4px 18px rgba(0,0,0,.35); text-decoration:none; }
   body { padding-bottom:64px; }
 }
-/* Safety-orange accent: dark text on orange for contrast (#0a0a0a on #F28C28 ≈ 8.1:1; white would fail at ≈2.4:1) */
-:root { --accent-ink: #A35200; }
-a { color: var(--accent-ink); } a:hover { color: #7A3D00; }
+/* Black-and-white accents */
+:root { --accent-ink: #0a0a0a; }
+a { color: var(--accent-ink); } a:hover { color: #333; }
 .hero a, .nav a, .footer a, .band a:not(.btn) { color: inherit; }
 .btn-primary, .btn-primary:hover, .nav-cta, .nav-cta:hover, .hero .hero-offer, .footer .review-cta .btn-dark { color: var(--black) !important; }
 .mobile-call-bar, .nav-call { background: var(--red); color: var(--black); }
 .hero-trust span::before { color: var(--red); }
 .nav a.nav-call, .mobile-call-bar { color: var(--black) !important; }
+@media (max-width: 860px) { body { padding-bottom: 64px; } .hero .tag { white-space: nowrap; font-size: .68rem; letter-spacing: .08em; } }
+/* Black & white only: black buttons/white text on light areas; white buttons/black text on dark areas */
+.btn-primary, .footer .review-cta .btn-dark { background: var(--black) !important; border-color: var(--black) !important; color: var(--white) !important; }
+.hero .btn-primary, .nav-cta, .hero .hero-offer { background: var(--white) !important; border-color: var(--white) !important; color: var(--black) !important; }
+.hero .btn-primary:hover, .nav-cta:hover { background: var(--silver) !important; }
+.mobile-call-bar { background: var(--black) !important; color: var(--white) !important; border-top: 1px solid rgba(255,255,255,.35); }
+.hero-trust span::before { color: var(--white); }
+.review-band { border-top-color: var(--black); }
+@media (max-width: 860px) { .nav-mobile-actions .nav-call { display: none; } }
