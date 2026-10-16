@@ -188,7 +188,10 @@
           <span>Construction</span>
         </span>
       </a>
-      <nav class="nav-links">
+      <div class="nav-mobile-actions">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav" onclick="var n=document.getElementById('site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);">&#9776;</button>
+      </div>
+      <nav class="nav-links" id="site-nav">
         <a class="active" href="/">Home</a>
         <a href="services.html">Services</a>
         <a href="articles.html">Articles</a>
@@ -201,14 +204,16 @@
   <section class="hero">
     <div class="hero-bg" role="img" aria-label="Modern ranch house and shop at dusk with the lights on and the shop door open"></div>
     <div class="wrap hero-inner">
-      <div class="tag">Servicing West Texas and Eastern New Mexico</div>
-      <h1><span class="h1-kicker">Cross Buck Construction:</span> Built for the country. Ready for the job.</h1>
+      <div class="tag">Serving West Texas &amp; Eastern NM</div>
+      <h1><span class="h1-kicker">Cross Buck Construction:</span> Keeping customers coming back for over two decades.</h1>
+      <p class="hero-sub">Quality work, fair prices, and we stand behind every job.</p>
+      <p class="hero-trust"><span>Licensed &amp; insured in TX &amp; NM</span> <span>Highly recommended</span></p>
       <p class="hero-offer"><strong>Up to $100 off your job</strong> <span>Call or text for details</span></p>
       <p>
-        Licensed electrician for panels, wiring, lighting, generator hookups, and any electrical
-        problem or upgrade, for homes, shops and ranches. We're open, day or night, for emergencies.
+        From small projects to big projects: repairs, emergencies, remodels, renovations and new builds.
+        <a href="#reviews">See our reviews</a>.
       </p>
-      <p class="hero-also">We also do general contracting, handyman, plumbing fixes, flooring, drywall and paint, fence, concrete and more.</p>
+      <p class="hero-towns">Serving Lubbock, Lamesa, Seminole and the surrounding area.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="contact.html">Request a quote</a>
         <a class="btn btn-call" href="tel:+18064966999" aria-label="Call Cross Buck Construction at (806) 496-6999">Call (806) 496-6999</a>
@@ -454,7 +459,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" id="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <span class="brand-mark"><img src="/assets/brand/crossbuck-logo-4k.png" alt="" /></span>
@@ -480,5 +485,6 @@
       <a class="btn btn-dark" href="https://www.facebook.com/profile.php?id=61593959193226" target="_blank" rel="noopener" data-review-link="footer">Leave a review</a>
     </div>
   </footer>
+  <a class="mobile-call-bar" href="tel:+18064966999" aria-label="Call Cross Buck Construction at (806) 496-6999">Call (806) 496-6999</a>
 </body>
 </html>
