@@ -4,6 +4,6 @@ West Texas and Eastern New Mexico construction: electrical, operating (pipeline 
 
 **Email:** email@crossbuckconstruction.com  
 **Phone:** (806) 496-6999  
-**Area:** Wolfforth (base) · Lubbock · Brownfield · Lamesa · Midland · Odessa · Big Spring · Snyder · Sweetwater · Amarillo · Muleshoe TX · Hobbs NM
+**Area:** Wolfforth (base) · Lubbock · Lamesa · Seminole · Brownfield · Levelland · Slaton · Plainview TX
 
 Site files for GitHub Pages.

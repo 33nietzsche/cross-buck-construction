@@ -36,6 +36,12 @@
   // The form emits this only after Web3Forms confirms a successful submission.
   // No customer-supplied form fields are passed to Google.
   document.addEventListener("crossbuck:quote-sent", function () {
+    // GA4 recommended lead event (mark generate_lead as a key event in GA4 Admin).
+    measure("generate_lead", {
+      send_to: "G-VGGX50Y3KE",
+      form_id: "quote-form",
+      page_path: window.location.pathname
+    });
     measure("conversion", {
       send_to: "AW-18466560284/u79xCISMlJAdEJyyxeVE",
       value: 0,
@@ -57,7 +63,12 @@
     var target = event.target;
     var link = target && target.closest ? target.closest('a[href^="tel:"]') : null;
     if (!link) return;
-    measure("phone_click", { send_to: "G-VGGX50Y3KE" });
+    // GA4 event for tel: links (mark phone_click as a key event in GA4 Admin).
+    measure("phone_click", {
+      send_to: "G-VGGX50Y3KE",
+      link_url: link.getAttribute("href"),
+      page_path: window.location.pathname
+    });
     oaiMeasure("measure", "custom", { type: "custom" }, { custom_event_name: "phone_call_click" });
   });
 })();
