@@ -681,3 +681,27 @@ a { color: var(--accent-ink); } a:hover { color: #333; }
 @media (max-width: 860px) { .nav-mobile-actions .nav-call { display: none; } }
 .footer .review-cta .btn-dark { background: var(--white) !important; border-color: var(--white) !important; color: var(--black) !important; }
 .hero .hero-sub { font-size: 1.1rem; font-weight: 600; margin: 4px 0 12px; }
+/* Shared quote forms on service landing pages. */
+html { scroll-behavior: smooth; }
+.quote-section { padding: 48px 0; scroll-margin-top: 128px; }
+body.article-page .quote-section { padding: 0; }
+body.article-page .quote-section .wrap { padding-top: 32px; padding-bottom: 32px; }
+#request-quote { scroll-margin-top: 128px; }
+.quote-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px; align-items: start; }
+.quote-intro h2 { margin-top: 10px; }
+.quote-direct { font-weight: 700; line-height: 2; }
+.quote-card { min-width: 0; }
+.quote-card form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.quote-card .form-note, .quote-card label, .quote-card textarea, .quote-card select, .quote-card .form-status, .quote-card form > p { grid-column: 1 / -1; }
+.quote-card input:not([type="hidden"]):not([type="checkbox"]) { grid-column: 1 / -1; }
+.quote-card input, .quote-card select, .quote-card textarea { width: 100%; min-width: 0; font-size: 16px; }
+.quote-card label { margin-top: 12px; }
+.quote-card textarea { min-height: 100px; }
+.quote-card button { min-height: 48px; }
+.quote-card a, .quote-direct a { text-underline-offset: 3px; }
+.remodel-page .quote-section { padding: 56px 0; background: #f5f4ef; }
+@media (max-width: 760px) {
+  .quote-layout { grid-template-columns: 1fr; gap: 20px; }
+  .quote-section, .remodel-page .quote-section { padding: 32px 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

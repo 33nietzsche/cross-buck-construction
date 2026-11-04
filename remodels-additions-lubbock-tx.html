@@ -28,6 +28,7 @@
     gtag('config', 'AW-18466560284');
   </script>
   <script defer src="/assets/lead-measurement.js"></script>
+  <script defer src="/assets/quote-form.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@
         <a href="/services.html">Services</a>
         <a class="active" href="/remodels-additions-lubbock-tx.html" aria-current="page">Remodels</a>
         <a href="/about.html">About</a>
-        <a class="nav-cta" href="/contact.html">Get a quote</a>
+        <a class="nav-cta" href="#request-quote">Get a quote</a>
       </nav>
     </div>
   </header>
@@ -113,7 +114,7 @@
             <p class="r-tagline">Make more of the place you call home.</p>
             <p class="r-intro">Refresh a room. Improve the layout. Add the space you need. Cross Buck Construction brings framing, flooring, plumbing, electrical work and the finishing details into the conversation from the start.</p>
             <div class="r-actions">
-              <a class="r-button" href="/contact.html">Tell us about your project <span aria-hidden="true">↗</span></a>
+              <a class="r-button" href="#request-quote">Tell us about your project <span aria-hidden="true">↗</span></a>
               <a class="r-phone" href="tel:+18064966999">Call (806) 496-6999</a>
             </div>
             <p class="r-small">Have photos or a rough plan? Text them to <a href="sms:+18064966999">(806) 496-6999</a>.</p>
@@ -131,6 +132,70 @@
         </div>
       </div>
     </section>
+
+
+  <section class="quote-section" id="request-quote" aria-labelledby="quote-title">
+    <div class="wrap quote-layout">
+      <div class="quote-intro">
+        <p class="page-kicker">Talk with Zach · Cross Buck Construction</p>
+        <h2 id="quote-title">Tell us what you want to change</h2>
+        <p>Drywall, framing, painting, plumbing, electrical or a complete room refresh: send the scope and location to Cross Buck.</p>
+        <p class="quote-direct"><a href="tel:+18064966999">Call (806) 496-6999</a><br /><a href="sms:+18064966999">Text photos or project details</a></p>
+        <p class="form-note">Based in Wolfforth, serving Lubbock and surrounding West Texas communities. We confirm the scope and availability before work is scheduled.</p>
+      </div>
+      <div class="card quote-card">
+        <form id="quote-form" data-quote-form data-default-service="Remodel / addition" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+          <p class="form-note">Send this form and your request comes straight to Cross Buck Construction. You can also <a href="tel:+18064966999">call</a> or <a href="sms:+18064966999">text (806) 496-6999</a>.</p>
+          <input type="hidden" name="access_key" value="e207138a-d18b-4cdc-b3ad-0bd3d437b727" />
+          <input type="hidden" name="subject" value="New remodel quote request – Cross Buck website" />
+          <input type="hidden" name="from_name" value="Cross Buck website" />
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
+
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best number" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
+
+          <label for="town">Town</label>
+          <input id="town" name="town" autocomplete="address-level2" placeholder="e.g. Lubbock, Lamesa, Wolfforth…" />
+
+          <label for="service">Job type</label>
+          <select id="service" name="job_type">
+            <option>General / mix / not sure</option>
+            <option>Electrical</option>
+            <option>Plumbing repairs</option>
+            <option>Drywall repair / texture</option>
+            <option>Framing / carpentry</option>
+            <option>Appliance repair</option>
+            <option>Painting</option>
+            <option>Make-ready / property turnover</option>
+            <option selected>Remodel / addition</option>
+            <option>Solar — well install or house array</option>
+            <option>Welding</option>
+            <option>Operating (caliche / dig &amp; dump)</option>
+            <option>Ranch and farm plumbing / pipeline</option>
+            <option>Corral / pens</option>
+            <option>Fence / gates</option>
+            <option>Concrete</option>
+          </select>
+
+          <label for="msg">What do you need?</label>
+          <textarea id="msg" name="message" required placeholder="Describe the work, location, and timeline."></textarea>
+
+          <p class="form-note"><strong>Have photos?</strong> Text them to <a href="sms:+18064966999">(806) 496-6999</a> after you send this.</p>
+
+          <p style="margin-top:16px">
+            <button class="btn btn-primary" type="submit" id="quote-submit">Send request</button>
+          </p>
+          <p class="form-status" id="quote-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 
     <section class="r-section" aria-labelledby="r-services-title">
       <div class="wrap">
@@ -165,7 +230,7 @@
     <section class="r-section" aria-labelledby="r-area-title">
       <div class="wrap r-area-grid">
         <div><p class="r-eyebrow">Local work. A direct conversation.</p><h2 id="r-area-title">Wolfforth, Lubbock<br />and the South Plains.</h2></div>
-        <div><p>Cross Buck Construction is based in Wolfforth and serves Lubbock, Lamesa, Seminole, Brownfield, Levelland, Slaton and Plainview. Call or text with your location and project so we can confirm availability and travel.</p><p>Talk with Zach at <a href="tel:+18064966999">(806) 496-6999</a>, or <a href="/contact.html">send a project request</a>.</p><a class="r-text-link" href="https://www.google.com/maps?cid=1025847755234467624" target="_blank" rel="noopener">Find Cross Buck Construction on Google <span aria-hidden="true">↗</span></a></div>
+        <div><p>Cross Buck Construction is based in Wolfforth and serves Lubbock, Lamesa, Seminole, Brownfield, Levelland, Slaton and Plainview. Call or text with your location and project so we can confirm availability and travel.</p><p>Talk with Zach at <a href="tel:+18064966999">(806) 496-6999</a>, or <a href="#request-quote">send a project request</a>.</p><a class="r-text-link" href="https://www.google.com/maps?cid=1025847755234467624" target="_blank" rel="noopener">Find Cross Buck Construction on Google <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -185,7 +250,7 @@
     <section class="r-final" aria-labelledby="r-final-title">
       <div class="wrap r-final-grid">
         <div><p class="r-eyebrow">Let’s talk about the possibilities</p><h2 id="r-final-title">Make your next project<br />a good fit for your home.</h2><p>Tell us what you have, what you need and where you want to go with it.</p></div>
-        <div class="r-actions"><a class="r-button r-button-light" href="/contact.html">Request a quote <span aria-hidden="true">↗</span></a><a class="r-phone" href="tel:+18064966999">(806) 496-6999</a></div>
+        <div class="r-actions"><a class="r-button r-button-light" href="#request-quote">Request a quote <span aria-hidden="true">↗</span></a><a class="r-phone" href="tel:+18064966999">(806) 496-6999</a></div>
       </div>
     </section>
   </main>
@@ -196,7 +261,7 @@
         <span class="brand-mark"><img src="/assets/brand/crossbuck-logo-4k.png" alt="" width="88" height="88" loading="lazy" /></span>
         <div><strong>Cross Buck Construction</strong> · Wolfforth, TX<br />Serving Lubbock and the South Plains<br />Remodels · Additions · Repairs</div>
       </div>
-      <div class="footer-nap">Call or text <a href="tel:+18064966999">(806) 496-6999</a><br /><a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a><br /><br /><a href="/contact.html">Get a quote</a> · <a href="/services.html">All services</a> · <a href="/about.html">About Zach</a></div>
+      <div class="footer-nap">Call or text <a href="tel:+18064966999">(806) 496-6999</a><br /><a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a><br /><br /><a href="#request-quote">Get a quote</a> · <a href="/services.html">All services</a> · <a href="/about.html">About Zach</a></div>
     </div>
     <div class="wrap footer-links"><a href="https://www.google.com/maps?cid=1025847755234467624" target="_blank" rel="noopener">Google Business Profile</a> · <a href="https://www.facebook.com/profile.php?id=61593959193226" target="_blank" rel="noopener">Facebook</a> · <a href="/privacy.html">Inquiry privacy notice</a></div>
     <div class="wrap review-cta">
