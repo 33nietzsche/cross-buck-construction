@@ -684,6 +684,9 @@ a { color: var(--accent-ink); } a:hover { color: #333; }
 /* Shared quote forms on service landing pages. */
 html { scroll-behavior: smooth; }
 .quote-section { padding: 48px 0; scroll-margin-top: 128px; }
+body.article-page .quote-section { padding: 0; }
+body.article-page .quote-section .wrap { padding-top: 32px; padding-bottom: 32px; }
+#request-quote { scroll-margin-top: 128px; }
 .quote-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px; align-items: start; }
 .quote-intro h2 { margin-top: 10px; }
 .quote-direct { font-weight: 700; line-height: 2; }

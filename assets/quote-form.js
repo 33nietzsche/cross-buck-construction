@@ -42,11 +42,14 @@
         if (defaultService) service.value = defaultService;
         status.className = "form-status form-success";
         status.innerHTML = 'Thanks — your request was sent. We’ll get back to you soon. Have photos? <a href="sms:+18064966999">Text (806) 496-6999</a>.';
+        if (form.hasAttribute("data-review-after-send")) {
+          status.innerHTML += '<br />Worked with us before? <a href="https://g.page/r/CSjfYSQZizwOEBM/review" target="_blank" rel="noopener" data-review-link="contact-thanks">Review us on Google</a>.';
+        }
       } catch (error) {
         status.className = "form-status form-error";
         status.innerHTML = error.name === "AbortError"
           ? 'We couldn’t confirm delivery in time. Your details are still here. Please <a href="tel:+18064966999">call (806) 496-6999</a> or <a href="sms:+18064966999">text us</a> so we can check your request.'
-          : 'Your request could not be confirmed. Your details are still here. Please try again, <a href="tel:+18064966999">call (806) 496-6999</a>, <a href="sms:+18064966999">text us</a>, or email <a href="mailto:zach@crossbuckconstruction.com">zach@crossbuckconstruction.com</a>.';
+          : 'Your request could not be confirmed. Your details are still here. Please try again, <a href="tel:+18064966999">call (806) 496-6999</a>, <a href="sms:+18064966999">text us</a>, or email <a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a>.';
       } finally {
         clearTimeout(timeout);
         button.disabled = false;
