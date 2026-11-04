@@ -11,6 +11,7 @@
     gtag('config', 'AW-18466560284');
   </script>
   <script defer src="/assets/lead-measurement.js"></script>
+  <script defer src="/assets/quote-form.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Cross Buck Construction</title>
@@ -31,7 +32,7 @@
   "name": "Cross Buck Construction",
   "url": "https://crossbuckconstruction.com/",
   "telephone": "+1-806-496-6999",
-  "email": "email@crossbuckconstruction.com",
+  "email": "zach@crossbuckconstruction.com",
   "slogan": "Servicing West Texas and Eastern New Mexico",
   "description": "Cross Buck Construction is a licensed electrician, licensed in Texas and New Mexico, based in Wolfforth, Texas, serving Lubbock, Wolfforth, Lamesa, Seminole, Brownfield, Levelland, Slaton and Plainview in West Texas. It is also a general contractor for concrete, excavation, framing, solar, welding, equipment operating and dirt work, corrals, fences and gates, and plumbing, and it handles emergency and handyman fixes. Concrete work is local only: Wolfforth, Lubbock and nearby towns.",
   "disambiguatingDescription": "Cross Buck Construction (two words) of Wolfforth, Texas, a West Texas and Eastern New Mexico contractor. Not affiliated with any similarly named construction company in Ohio.",
@@ -179,9 +180,9 @@
   <section class="solid" style="padding-top:8px">
     <div class="wrap grid-2">
       <div class="card">
-        <h3>Request a quote</h3>
-        <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
-          <p class="form-note">Send this form and your request comes straight to Cross Buck Construction. You can also call or text <a href="tel:+18064966999">(806) 496-6999</a>.</p>
+        <h2 id="request-quote">Request a quote</h2>
+        <form id="quote-form" data-quote-form data-default-service="General / mix / not sure" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+          <p class="form-note">Send this form and your request comes straight to Cross Buck Construction. You can also <a href="tel:+18064966999">call</a> or <a href="sms:+18064966999">text (806) 496-6999</a>.</p>
           <input type="hidden" name="access_key" value="e207138a-d18b-4cdc-b3ad-0bd3d437b727" />
           <input type="hidden" name="subject" value="New quote request – Cross Buck website" />
           <input type="hidden" name="from_name" value="Cross Buck website" />
@@ -201,70 +202,35 @@
 
           <label for="service">Job type</label>
           <select id="service" name="job_type">
+            <option>General / mix / not sure</option>
             <option>Electrical</option>
+            <option>Plumbing repairs</option>
+            <option>Drywall repair / texture</option>
+            <option>Framing / carpentry</option>
+            <option>Appliance repair</option>
+            <option>Painting</option>
+            <option>Make-ready / property turnover</option>
+            <option>Remodel / addition</option>
             <option>Solar — well install or house array</option>
             <option>Welding</option>
-            <option>Operating (caliche / dig & dump)</option>
+            <option>Operating (caliche / dig &amp; dump)</option>
             <option>Ranch and farm plumbing / pipeline</option>
             <option>Corral / pens</option>
             <option>Fence / gates</option>
             <option>Concrete</option>
-            <option>Framing</option>
-            <option>General / mix / not sure</option>
           </select>
 
           <label for="msg">What do you need?</label>
-          <textarea id="msg" name="message" required placeholder="Describe the job, access, and timeline."></textarea>
+          <textarea id="msg" name="message" required placeholder="Describe the work, location, and timeline."></textarea>
 
-          <p class="form-note"><strong>Have photos?</strong> Text them to <a href="tel:+18064966999">(806) 496-6999</a> after you send this.</p>
+          <p class="form-note"><strong>Have photos?</strong> Text them to <a href="sms:+18064966999">(806) 496-6999</a> after you send this.</p>
 
           <p style="margin-top:16px">
             <button class="btn btn-primary" type="submit" id="quote-submit">Send request</button>
           </p>
           <p class="form-status" id="quote-status" role="status" aria-live="polite"></p>
         </form>
-        <script>
-          (function () {
-            var form = document.getElementById("quote-form");
-            var status = document.getElementById("quote-status");
-            var button = document.getElementById("quote-submit");
-            form.addEventListener("submit", function (event) {
-              event.preventDefault();
-              if (button.disabled || !form.reportValidity()) return;
-              var data = {};
-              new FormData(form).forEach(function (value, key) { data[key] = value; });
-              if (!data.phone && !data.email) {
-                status.className = "form-status form-error";
-                status.textContent = "Please add a phone number or email so we can get back to you.";
-                return;
-              }
-              button.disabled = true;
-              status.className = "form-status";
-              status.textContent = "Sending…";
-              fetch(form.action, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "Accept": "application/json" },
-                body: JSON.stringify(data)
-              })
-                .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
-                .then(function (r) {
-                  if (r.ok && r.json.success) {
-                    document.dispatchEvent(new Event("crossbuck:quote-sent"));
-                    form.reset();
-                    status.className = "form-status form-success";
-                    status.innerHTML = "Thanks — your request was sent. We’ll get back to you soon. Have photos? Text them to (806) 496-6999.<br />Worked with us before? <a href=\"https://g.page/r/CSjfYSQZizwOEBM/review\" target=\"_blank\" rel=\"noopener\" data-review-link=\"contact-thanks\">Review us on Google</a>.";
-                  } else {
-                    throw new Error((r.json && r.json.message) || "Send failed");
-                  }
-                })
-                .catch(function () {
-                  status.className = "form-status form-error";
-                  status.innerHTML = "Sorry, that didn’t go through. Please call or text <a href=\"tel:+18064966999\">(806) 496-6999</a>, or email <a href=\"mailto:email@crossbuckconstruction.com\">email@crossbuckconstruction.com</a>.";
-                })
-                .then(function () { button.disabled = false; });
-            });
-          })();
-        </script>
+
       </div>
       <div>
         <div class="card" style="margin-bottom:16px">
@@ -273,13 +239,13 @@
             <strong>Business:</strong> Cross Buck Construction<br />
             <strong>Based in:</strong> Wolfforth, TX<br />
             <strong>Phone:</strong> <a href="tel:+18064966999">(806) 496-6999</a><br />
-            <strong>Email:</strong> <a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a><br />
+            <strong>Email:</strong> <a href="mailto:zach@crossbuckconstruction.com">zach@crossbuckconstruction.com</a><br />
             <strong>Towns:</strong> Wolfforth, Lubbock, Lamesa, Seminole, Brownfield, Levelland, Slaton and Plainview, Texas
           </p>
         </div>
         <div class="card">
           <h3>Services (quick list)</h3>
-          <p>Electrical · Solar well installs and house arrays · Welding · Operating · Construction · Ranch and farm plumbing, pipeline · Corrals · Fences · Concrete · Framing · General jobs.</p>
+          <p>Electrical · Plumbing repairs · Drywall repair and texture · Framing · Appliance repair · Painting · Make-readies · Remodels and additions · Solar · Welding · Ranch and property work.</p>
         </div>
       </div>
     </div>
@@ -297,7 +263,7 @@
       </div>
       <div class="footer-nap">
         Call or text <a href="tel:+18064966999">(806) 496-6999</a><br />
-        <a href="mailto:email@crossbuckconstruction.com">email@crossbuckconstruction.com</a><br />
+        <a href="mailto:zach@crossbuckconstruction.com">zach@crossbuckconstruction.com</a><br />
         We're open, day or night, for emergencies.<br /><br />
         <a href="/contact.html">Get a quote</a> &middot; <a href="/services.html">Services</a> &middot; <a href="/about.html">About</a>
       </div>

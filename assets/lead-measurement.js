@@ -35,7 +35,9 @@
 
   // The form emits this only after Web3Forms confirms a successful submission.
   // No customer-supplied form fields are passed to Google.
-  document.addEventListener("crossbuck:quote-sent", function () {
+  document.addEventListener("crossbuck:quote-sent", function (event) {
+    // Internal delivery checks must not become customer leads or ad conversions.
+    if (event.detail && event.detail.test) return;
     // GA4 recommended lead event (mark generate_lead as a key event in GA4 Admin).
     measure("generate_lead", {
       send_to: "G-VGGX50Y3KE",
@@ -63,6 +65,7 @@
     var target = event.target;
     var link = target && target.closest ? target.closest('a[href^="tel:"]') : null;
     if (!link) return;
+    if (new URLSearchParams(window.location.search).get("test") === "1") return;
     // GA4 event for tel: links (mark phone_click as a key event in GA4 Admin).
     measure("phone_click", {
       send_to: "G-VGGX50Y3KE",
