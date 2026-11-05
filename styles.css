@@ -698,6 +698,7 @@ body.article-page .quote-section .wrap { padding-top: 32px; padding-bottom: 32px
 .quote-card label { margin-top: 12px; }
 .quote-card textarea { min-height: 100px; }
 .quote-card button { min-height: 48px; }
+form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 .quote-card a, .quote-direct a { text-underline-offset: 3px; }
 .remodel-page .quote-section { padding: 56px 0; background: #f5f4ef; }
 @media (max-width: 760px) {
