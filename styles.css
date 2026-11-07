@@ -785,3 +785,35 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 .home-page .checklist li::before { color: #fff; }
 .home-page .band .card p, .home-page .pill { color: #fff; }
 .home-page .logo-strip { border-bottom: 0; }
+
+/* Black service pages; scoped so the remodel page retains its light presentation. */
+body.service-dark, body.service-dark .page-head, body.service-dark section,
+body.service-dark section .wrap, body.service-dark .reading,
+body.service-dark .section-head, body.service-dark .card, body.service-dark .quote-card {
+  background: #000; color: #fff; box-shadow: none;
+}
+.service-dark h1, .service-dark h2, .service-dark h3, .service-dark h4,
+.service-dark p, .service-dark li, .service-dark label, .service-dark figcaption,
+.service-dark .muted, .service-dark .lead, .service-dark .num,
+.service-dark .checklist li::before { color: #fff; }
+.service-dark a:not(.btn):not(.nav-cta), .service-dark a:not(.btn):not(.nav-cta):hover { color: #fff; }
+.service-dark .card { border-color: #555; }
+.service-dark .band::before { display: none; }
+.service-dark .ico img { filter: grayscale(1) invert(1) contrast(1.5); box-shadow: none; border: 0; }
+.service-dark section .btn, .service-dark .page-head .btn {
+  background: #000 !important; color: #fff !important; border: 1px solid #fff !important;
+}
+.service-dark section .btn:hover, .service-dark .page-head .btn:hover {
+  background: #292929 !important; color: #fff !important;
+}
+.service-dark input:not([type="hidden"]), .service-dark textarea, .service-dark select {
+  background: #111; color: #fff; border: 1px solid #888;
+}
+.service-dark input::placeholder, .service-dark textarea::placeholder { color: #ccc; opacity: 1; }
+.service-dark a:focus-visible, .service-dark button:focus-visible,
+.service-dark input:focus-visible, .service-dark select:focus-visible,
+.service-dark textarea:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.remodel-page .bathroom-gallery { background: #fff; color: #17191c; }
+.remodel-page .bathroom-gallery h2 { color: #17191c !important; }
+.remodel-page .bathroom-gallery p, .remodel-page .bathroom-gallery figcaption { color: #17191c; }
+.remodel-page .bathroom-gallery .btn { background: #111; color: #fff; border-color: #111; }
