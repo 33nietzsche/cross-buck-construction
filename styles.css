@@ -817,3 +817,7 @@ body.service-dark .section-head, body.service-dark .card, body.service-dark .quo
 .remodel-page .bathroom-gallery h2 { color: #17191c !important; }
 .remodel-page .bathroom-gallery p, .remodel-page .bathroom-gallery figcaption { color: #17191c; }
 .remodel-page .bathroom-gallery .btn { background: #111; color: #fff; border-color: #111; }
+
+/* Final contrast corrections from independent page review. */
+.service-dark .review-band, .service-dark .review-band p, .service-dark .review-band strong { color: #fff; }
+.remodel-page .bathroom-gallery a { color: #17191c; }
