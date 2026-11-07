@@ -747,3 +747,5 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 .bathroom-photo-grid img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .bathroom-photo-grid figcaption { padding-top: 12px; font-size: 15px; }
 @media (max-width: 700px) { .bathroom-photo-grid { grid-template-columns: 1fr; } }
+/* Keep the hero call number readable on its white button. */
+.hero a.btn-call, .hero a.btn-call:hover, .hero a.btn-call:focus { color: #000 !important; }
