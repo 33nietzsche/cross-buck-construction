@@ -44,13 +44,8 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--text);
-  background-color: #121418;
+  background-color: #000;
   color: #f3f0e8;
-  background-image: url("assets/brand/blueprint.svg?v=blackprint");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  background-attachment: fixed;
   line-height: 1.55;
 }
 /* Reading column stays solid so the sheet cannot cover the words. */
@@ -733,3 +728,27 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 /* Let the phone banner scroll away, preserving the original sticky-nav clearance. */
 .nav { top: -60px; }
 .nav a.header-call { color: #fff; }
+
+/* Owner-selected black service section with clear white lettering. */
+.home-services, .home-services .section-head, .home-services .card { background: #000; color: #fff; }
+.home-services .card { border-color: #555; }
+.home-services h2, .home-services h3, .home-services a, .home-services p, .home-services .lead, .home-services .num { color: #fff; }
+.home-services .btn { background: #000; color: #fff; border: 2px solid #fff; }
+.home-services .btn:hover { background: #fff; color: #000; }
+.home-services .ico img { border: 2px solid #000; }
+.home-services a:not(.btn):hover, .home-services a:not(.btn):focus { color: #fff; text-decoration: underline; }
+
+/* Display the existing light icon tiles as white symbols on black. */
+.home-services .ico img[src*=".jpg"] { filter: grayscale(1) invert(1) contrast(1.5); border: 0; }
+.bathroom-gallery { background: #000; color: #fff; padding: 56px 0; }
+.bathroom-gallery h2, .bathroom-gallery p, .bathroom-gallery a { color: #fff; }
+.bathroom-photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 24px 0; }
+.bathroom-photo-grid figure { margin: 0; }
+.bathroom-photo-grid img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.bathroom-photo-grid figcaption { padding-top: 12px; font-size: 15px; }
+@media (max-width: 700px) { .bathroom-photo-grid { grid-template-columns: 1fr; } }
+/* Keep the hero call number readable on its white button. */
+.hero a.btn-call, .hero a.btn-call:hover, .hero a.btn-call:focus { color: #000 !important; }
+
+.home-services .ico img { box-shadow: none; }
+.bathroom-gallery h2 { color: #fff !important; }
