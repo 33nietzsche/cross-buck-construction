@@ -1,0 +1,15 @@
+/* About page: light introduction, contrasting story blocks, dark service area. */
+.about-page { background:#fff; color:#111; }
+.about-page .page-head { background:#fff; color:#111; }
+.about-page .page-head h1, .about-page .page-head .muted { color:#111; }
+.about-page section:not(.solid) { background:#fff; }
+.about-page .card { background:#fff; color:#111; border:1px solid #111; box-shadow:none; }
+.about-page .card h3, .about-page .card p { color:inherit; }
+.about-page .card:nth-child(2) { background:#000; color:#fff; border-color:#000; }
+.about-page .solid { background:#000; color:#fff; }
+.about-page .solid h2, .about-page .solid p, .about-page .solid li,
+.about-page .solid .checklist li::before { color:#fff; }
+.about-page .solid .btn { background:#fff!important; color:#111!important; border:1px solid #fff!important; }
+.about-page .solid .btn:hover { background:#000!important; color:#fff!important; }
+.about-page .solid a:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+.about-page .solid > .wrap { background:#000; color:#fff; box-shadow:none; border:0; }
