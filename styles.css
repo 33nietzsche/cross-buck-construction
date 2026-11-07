@@ -751,3 +751,4 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 .hero a.btn-call, .hero a.btn-call:hover, .hero a.btn-call:focus { color: #000 !important; }
 
 .home-services .ico img { box-shadow: none; }
+.bathroom-gallery h2 { color: #fff !important; }
