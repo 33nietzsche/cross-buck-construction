@@ -735,3 +735,4 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 .home-services h2, .home-services h3, .home-services a, .home-services p, .home-services .lead, .home-services .num { color: #fff; }
 .home-services .btn { background: #000; color: #fff; border: 2px solid #fff; }
 .home-services .btn:hover { background: #fff; color: #000; }
+.home-services .ico img { border: 2px solid #000; }
