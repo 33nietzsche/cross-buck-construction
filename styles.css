@@ -730,3 +730,6 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
   .header-call { flex-direction: column; padding: 6px 12px; }
   .header-call span { font-size: 12px; }
 }
+/* Let the phone banner scroll away, preserving the original sticky-nav clearance. */
+.nav { top: -60px; }
+.nav a.header-call { color: #fff; }
