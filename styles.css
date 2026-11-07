@@ -44,13 +44,8 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--text);
-  background-color: #121418;
+  background-color: #000;
   color: #f3f0e8;
-  background-image: url("assets/brand/blueprint.svg?v=blackprint");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  background-attachment: fixed;
   line-height: 1.55;
 }
 /* Reading column stays solid so the sheet cannot cover the words. */
@@ -733,3 +728,10 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 /* Let the phone banner scroll away, preserving the original sticky-nav clearance. */
 .nav { top: -60px; }
 .nav a.header-call { color: #fff; }
+
+/* Owner-selected black service section with clear white lettering. */
+.home-services, .home-services .section-head, .home-services .card { background: #000; color: #fff; }
+.home-services .card { border-color: #555; }
+.home-services h2, .home-services h3, .home-services a, .home-services p, .home-services .lead, .home-services .num { color: #fff; }
+.home-services .btn { background: #000; color: #fff; border: 2px solid #fff; }
+.home-services .btn:hover { background: #fff; color: #000; }
