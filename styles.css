@@ -706,3 +706,30 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
   .quote-section, .remodel-page .quote-section { padding: 32px 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Prominent phone-first header on every shared-navigation page. */
+.header-call {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  min-height: 56px;
+  padding: 8px 16px;
+  background: #0a0a0a;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.2;
+}
+.header-call span { font-size: 14px; font-weight: 700; }
+.header-call strong { font-size: clamp(26px, 4vw, 34px); font-weight: 800; white-space: nowrap; }
+.header-call:hover { background: #292929; color: #fff; }
+.header-call:focus-visible { outline: 3px solid #f5c542; outline-offset: -4px; }
+@media (max-width: 480px) {
+  .header-call { flex-direction: column; padding: 6px 12px; }
+  .header-call span { font-size: 12px; }
+}
+/* Let the phone banner scroll away, preserving the original sticky-nav clearance. */
+.nav { top: -60px; }
+.nav a.header-call { color: #fff; }
