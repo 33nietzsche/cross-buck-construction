@@ -752,3 +752,8 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 
 .home-services .ico img { box-shadow: none; }
 .bathroom-gallery h2 { color: #fff !important; }
+
+/* Plain black presentation for the homepage work photos. */
+#site-photos, #site-photos .wrap, #site-photos figure { background: #000; border: 0; box-shadow: none; }
+#site-photos h2, #site-photos .lead, #site-photos figcaption { color: #fff; }
+#site-photos img { border: 0; outline: 0; box-shadow: none; }
