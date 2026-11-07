@@ -780,3 +780,8 @@ form[data-quote-form] .btn-primary:hover { color: var(--white) !important; }
 @media (min-width: 861px) {
   .home-page #site-photos .photo-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* QC contrast corrections for the black homepage. */
+.home-page .checklist li::before { color: #fff; }
+.home-page .band .card p, .home-page .pill { color: #fff; }
+.home-page .logo-strip { border-bottom: 0; }
